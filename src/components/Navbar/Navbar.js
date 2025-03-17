@@ -1,19 +1,30 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import './Navbar.css';
 
-const Navbar = ({ address, isMinter }) => {
+const Navbar = ({ address }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
         <h1>Web3 Ticketing</h1>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}></span>
+        </button>
       </div>
       
-      <div className="navbar-menu">
+      <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
         <NavLink 
           to="/create" 
           className={({ isActive }) => 
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Buat Tiket
         </NavLink>
@@ -22,6 +33,7 @@ const Navbar = ({ address, isMinter }) => {
           className={({ isActive }) => 
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Gunakan Tiket
         </NavLink>
@@ -30,6 +42,7 @@ const Navbar = ({ address, isMinter }) => {
           className={({ isActive }) => 
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Kelola Akses
         </NavLink>
@@ -38,6 +51,7 @@ const Navbar = ({ address, isMinter }) => {
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Transfer Tiket
         </NavLink>
@@ -46,17 +60,25 @@ const Navbar = ({ address, isMinter }) => {
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Tiket Saya
         </NavLink>
-          <NavLink to="/scan" className="nav-link">
-            Scan Tiket
-          </NavLink>
+        <NavLink 
+          to="/scan" 
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Scan Tiket
+        </NavLink>
         <NavLink 
           to="/buy" 
           className={({ isActive }) => 
             isActive ? 'nav-link active' : 'nav-link'
           }
+          onClick={() => setIsMenuOpen(false)}
         >
           Beli Tiket
         </NavLink>
@@ -64,7 +86,7 @@ const Navbar = ({ address, isMinter }) => {
 
       <div className="navbar-account">
         <span className="account-address" title={address}>
-          Your Wallet Address : {address.slice(0, 6)}...{address.slice(-4)}
+          {window.innerWidth > 768 ? 'Your Wallet Address: ' : ''}{address.slice(0, 6)}...{address.slice(-4)}
         </span>
       </div>
     </nav>

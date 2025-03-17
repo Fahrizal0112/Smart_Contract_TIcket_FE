@@ -1,49 +1,250 @@
 .navbar {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(52, 152, 219, 0.1),
+    rgba(155, 89, 182, 0.1),
+    rgba(52, 152, 219, 0.1)
+  );
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navbar-brand h1 {
+  color: white;
   margin: 0;
-  font-size: 1.5rem;
-  color: #2c3e50;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 600;
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
 }
 
 .navbar-menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 .nav-link {
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  color: #7f8c8d;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.2s;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 8px;
 }
 
 .nav-link:hover {
-  color: #2c3e50;
-  background-color: #f5f6fa;
+  color: white;
+}
+
+.nav-link:hover::before {
+  opacity: 0.1;
 }
 
 .nav-link.active {
-  color: #3498db;
-  background-color: #ebf5fb;
+  color: white;
+  background: linear-gradient(45deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2));
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.1);
+}
+
+.nav-link.active::before {
+  opacity: 0.2;
 }
 
 .navbar-account {
-  background-color: #f5f6fa;
+  background: rgba(52, 152, 219, 0.1);
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
 }
 
 .account-address {
+  color: #3498db;
   font-family: monospace;
-  color: #2c3e50;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.account-address::before {
+  content: '⬤';
+  color: #2ecc71;
+  font-size: 0.8rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 100;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+.hamburger.active {
+  background-color: transparent;
+}
+
+.hamburger.active::before {
+  transform: rotate(45deg);
+}
+
+.hamburger.active::after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0.5rem;
+    background: rgba(26, 26, 26, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 12px 12px;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .navbar-account {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .account-address {
+    justify-content: center;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .account-address {
+    font-size: 0.8rem;
+  }
 } 
