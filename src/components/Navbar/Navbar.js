@@ -82,6 +82,15 @@ const Navbar = ({ address }) => {
         >
           Beli Tiket
         </NavLink>
+        <NavLink
+          to="/withdraw"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Withdraw Revenue
+        </NavLink>
       </div>
 
       <div className="navbar-account">

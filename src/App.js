@@ -9,6 +9,7 @@ import TransferTicket from './components/TransferTicket/TransferTicket';
 import MyTickets from './components/MyTickets/MyTickets';
 import ScanTicket from './components/ScanTicket/ScanTicket';
 import BuyTicket from './components/BuyTicket/BuyTicket';
+import WithdrawRevenue from './components/WithdrawRevenue/WithdrawRevenue';
 import './App.css';
 
 function App() {
@@ -92,6 +93,15 @@ function App() {
                   signer={walletData.signer} 
                 />
               } 
+            />  
+            <Route
+              path="/withdraw"
+              element={
+                <WithdrawRevenue
+                  provider={walletData.provider}
+                  signer={walletData.signer}
+                />
+              }
             />
           </Routes>
         </main>
