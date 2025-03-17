@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Sistem Ticketing Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sistem ticketing terdesentralisasi yang dibangun di atas blockchain untuk manajemen dan penjualan tiket acara secara aman dan transparan.
 
-## Available Scripts
+## 🌟 Fitur Utama
 
-In the project directory, you can run:
+- Pembuatan dan manajemen acara
+- Pembelian tiket menggunakan cryptocurrency
+- Verifikasi kepemilikan tiket berbasis blockchain
+- Antarmuka pengguna yang responsif dan mudah digunakan
+- Smart contract yang aman untuk transaksi tiket
 
-### `npm start`
+## 🛠️ Teknologi yang Digunakan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Solidity (Smart Contracts)
+- Hardhat
+- React.js
+- Ethers.js
+- Web3.js
+- Tailwind CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Prasyarat
 
-### `npm test`
+Sebelum memulai, pastikan Anda telah menginstal:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14.0.0 atau lebih tinggi)
+- NPM atau Yarn
+- MetaMask wallet
+- Git
 
-### `npm run build`
+## 🚀 Cara Memulai
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone repository ini
+```bash
+git clone [URL_REPOSITORY_ANDA]
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instal dependensi
+```bash
+npm install
+# atau
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Jalankan smart contract di jaringan lokal
+```bash
+npx hardhat node
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-### `npm run eject`
+4. Jalankan aplikasi frontend
+```bash
+npm run dev
+# atau
+yarn dev
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📝 Penggunaan
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Hubungkan MetaMask wallet Anda ke aplikasi
+2. Pilih acara yang tersedia
+3. Pilih jumlah tiket yang ingin dibeli
+4. Konfirmasi transaksi melalui MetaMask
+5. Tiket akan muncul di dashboard Anda setelah transaksi berhasil
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🤝 Kontribusi
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Kontribusi selalu diterima! Silakan ikuti langkah-langkah ini:
 
-## Learn More
+1. Fork repository
+2. Buat branch fitur baru (`git checkout -b fitur/AmazingFeature`)
+3. Commit perubahan Anda (`git commit -m 'Menambahkan fitur baru'`)
+4. Push ke branch (`git push origin fitur/AmazingFeature`)
+5. Buat Pull Request
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📄 Lisensi
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Proyek ini dilisensikan di bawah Lisensi MIT - lihat file [LICENSE.md](LICENSE.md) untuk detail.
 
-### Code Splitting
+## 📞 Kontak
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Nama Anda - [@twitter_handle](https://twitter.com/twitter_handle)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Link Proyek: [https://github.com/username/repo_name](https://github.com/username/repo_name)
