@@ -79,6 +79,6 @@ Proyek ini dilisensikan di bawah Lisensi MIT - lihat file [LICENSE.md](LICENSE.m
 
 ## 📞 Kontak
 
-Nama Anda - [@twitter_handle](https://twitter.com/twitter_handle)
+Muchammad Fahrizal (muchamad.fachrizal12@gmail.com)
 
-Link Proyek: [https://github.com/username/repo_name](https://github.com/username/repo_name)
+Link Proyek: [https://github.com/username/repo_name](https://github.com/Fahrizal0112/Smart_Contract_TIcket_FE)
